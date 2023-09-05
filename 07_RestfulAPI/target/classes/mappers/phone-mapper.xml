@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="phone">
+	
+	<insert id="insert">
+		
+	</insert>
+	
+	
+	<!-- Dynamic Query : selectAll + selectOne (num) -->
+	<select id="select">
+	
+	</select>
+	
+	<delete id="delete">
+	
+	</delete>
+	
+	<update id="update">
+	
+	</update>
+	
+	<!-- Dynamic Query : id와 pw 둘다 입력했을때랑 id만 입력했을때 -->
+	
+	<select id="selectUser">
+	
+	</select>
+	
+</mapper>
