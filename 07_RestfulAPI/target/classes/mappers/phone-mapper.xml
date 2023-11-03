@@ -3,8 +3,9 @@
 
 <mapper namespace="phone">
 	
-	<insert id="insert">
-		
+	<insert id="insert" parameterType="phone">
+		INSERT INTO phone(num, model, price, vcode)
+		VALUES(#{num}, #{model}, #{price}, #{vcode})
 	</insert>
 	
 	

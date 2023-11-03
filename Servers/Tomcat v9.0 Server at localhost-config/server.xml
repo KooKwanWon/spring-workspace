@@ -106,7 +106,7 @@
 
 				
 				
-			<Context docBase="07_RestfulAPI" path="/api" reloadable="true" source="org.eclipse.jst.jee.server:07_RestfulAPI"/></Host>
+			<Context docBase="Test" path="/" reloadable="true" source="org.eclipse.jst.jee.server:Test"/></Host>
 		</Engine>
 	</Service>
 </Server>

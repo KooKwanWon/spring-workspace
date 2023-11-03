@@ -10,8 +10,8 @@
 	<h1>로그인</h1>
 	
 	<form action="signIn" method="post">
-		아이디 : <input type="text" name="id"> <br>
-		비밀번호 : <input type="password" name="pwd"> <br>
+		아이디 : <input type="text" name="id" required> <br>
+		비밀번호 : <input type="password" name="pwd" required> <br>
 		<input type="submit" value="전송">
 	</form>
 	

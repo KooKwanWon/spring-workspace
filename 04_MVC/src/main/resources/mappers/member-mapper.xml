@@ -4,34 +4,34 @@
 <mapper namespace="memberMapper">
 	
 	<resultMap type="Member" id="memberMap">
-		<id property="id" column="ID"/>
-		<result property="pwd" column="PASSWORD"/>
-		<result property="name" column="NAME"/>
-		<result property="addr" column="ADDRESS"/>
+		<id property="id" column="MEMBER_ID"/>
+		<result property="pwd" column="MEMBER_PWD"/>
+		<result property="name" column="MEMBER_NAME"/>
+		<result property="addr" column="MEMBER_ADDR"/>
 	</resultMap>
 
 
 	<insert id="registerMember" parameterType="Member" >
 		INSERT INTO
-		MEMBER(ID, PASSWORD, NAME, ADDRESS)
+		TB_MEMBER(MEMBER_ID, MEMBER_PWD, MEMBER_NAME, MEMBER_ADDR)
 		VALUES(#{id}, #{pwd}, #{name}, #{addr})
 	</insert>
 
 	<select id="showAllMember" resultMap="memberMap">
 		SELECT *
-		FROM MEMBER
+		FROM TB_MEMBER
 	</select>
 	
 	<select id="findMember" parameterType="String" resultMap="memberMap">
 	
 		SELECT *
-		FROM MEMBER
+		FROM TB_MEMBER
 		<where>
 		<if test='keyword!= ""'>
 			
-				ID LIKE '%'||#{keyword}||'%'
-				OR NAME LIKE '%'||#{keyword}||'%'
-				OR ADDRESS LIKE '%'||#{keyword}||'%'
+				MEMBER_ID LIKE '%'||#{keyword}||'%'
+				OR MEMBER_NAME LIKE '%'||#{keyword}||'%'
+				OR MEMBER_ADDR LIKE '%'||#{keyword}||'%'
 		</if>
 		</where>
 		
@@ -39,15 +39,15 @@
 	
 	<select id="login" parameterType="Member" resultMap="memberMap">
 		SELECT * 
-		FROM MEMBER
-		WHERE ID = #{id} AND PASSWORD = #{pwd}
+		FROM TB_MEMBER
+		WHERE MEMBER_ID = #{id} AND MEMBER_PWD = #{pwd}
 	</select>
 	
 	<update id="updateMember" parameterType="Member" >
 		UPDATE
-		MEMBER
-		SET PASSWORD = #{pwd}, NAME = #{name}, ADDRESS = #{addr}
-		WHERE ID = #{id} AND PASSWORD = #{pwd}
+		TB_MEMBER
+		SET MEMBER_PWD = #{pwd}, MEMBER_NAME = #{name}, MEMBER_ADDR = #{addr}
+		WHERE MEMBER_ID = #{id} AND MEMBER_PWD = #{pwd}
 	</update>
 	
 	
